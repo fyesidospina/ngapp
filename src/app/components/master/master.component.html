@@ -1,0 +1,91 @@
+
+<div class="content-block dx-card responsive-paddings">
+  <h2 class="content-block">Registrar Requerimiento</h2>
+
+
+<form #f="ngForm" (ngSubmit)="Save(f)">
+  <div>
+    <div class="form-group">
+      <input type="text"  class="form-control"  name="title" placeholder="Requerimiento" ngModel/>      
+    </div>
+
+    <div class="form-group">
+      <input type="text"  class="form-control"  name="dateregister" placeholder="Fecha" ngModel/>      
+    </div>
+
+    <div class="form-group">
+      <input type="text"  class="form-control"  name="statereq" placeholder="Estado" ngModel/>      
+    </div>
+
+    <div class="form-group ">
+      <input type="text"  class="form-control"  name="iteration" placeholder="Iteracion" ngModel/>      
+    </div>
+
+  </div>
+
+  <button>Guardar</button>
+  
+  <!-- {{f.value | json}} -->
+
+</form>
+
+</div>
+
+
+
+  <div class="row" >
+    <div class="col-sm-12" > 
+       
+            <div class="row">
+                <div class="col-sm-12 margen">   
+                    <table class="table tablacolores" datatable>
+                        <thead>
+                            <tr style="text-align:center">
+                                <th>ID</th>
+                                <th>REQUERIMIENTO</th>
+                                <th>FECHA</th> 
+                                <th>ESTADO</th> 
+                                <th>ITERACION</th>                                                     
+                            </tr>
+                        </thead>
+    
+                        <tbody>
+                            <tr style="text-align:center" *ngFor = "let master_list of master_list ; let i= index">
+                                <td class="tamanoletratabla">
+                                    <i class="fas fa-lightbulb tect-info btn btn-outline-warning" style="cursor: pointer;" (click)="Edit()"></i> <i></i>                            
+                                    {{master_list.id}}
+                                </td>
+                                <td>
+                                    {{master_list.title}} 
+                                </td>
+                                <td>
+                                    {{master_list.dateregister}}
+                                </td>
+                                <td>
+                                    $ {{master_list.statereq }}
+                                </td>
+                                <td>
+                                    {{master_list.iteration}}
+                                </td>
+                                
+                                <td>
+  
+                                <i class="far fa-edit tect-info btn btn-outline-success" style="cursor: pointer;" (click)="Edit()" ></i> <i></i>
+                       
+                                <label>
+                                    <i class="fas fa-trash-alt btn btn-outline-warning" style="cursor : pointer;" (click)="Delete()"></i>
+                                </label>
+  
+                                </td>
+                                
+                            </tr>                
+                        </tbody>
+                    
+                    </table>
+                
+                </div>          
+            </div>
+        
+    </div>
+  </div>
+
